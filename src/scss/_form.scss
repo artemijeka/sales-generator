@@ -28,4 +28,46 @@
       // font-family: "Open Sans", sans-serif;
     }
   }
+
+  &__submit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 57px;
+    border-radius: 11px;
+    background-color: #36aa60;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 11px;
+
+    transition: 300ms;
+
+    margin-top: calc(13px + 4px);
+    position: relative;
+
+    &:active {
+      border-radius: 11px;
+      span {
+        top: 0;
+      }
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background-image: linear-gradient(0deg, #3bc36d 0%, #36db72 100%);
+
+      transition: 300ms;
+
+      position: absolute;
+      left: 0;
+      top: -4px;
+    }
+  }
 }
