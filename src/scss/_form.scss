@@ -1,0 +1,31 @@
+.form {
+  font-family: "Open Sans", sans-serif;
+  &__input-wrap {
+    display: block;
+    &:not(:first-of-type) {
+      margin-top: 20px;
+    }
+    span {
+      // font-family: "Open Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: #000000;
+      display: block;
+      margin-bottom: 6px;
+    }
+  }
+  &__input {
+    width: 100%;
+    display: block;
+    height: 42px;
+    border-radius: 5px;
+    border: 1px solid #a0a0a0;
+    padding-left: 13px;
+    &::placeholder {
+      font-size: 16px;
+      color: #a0a0a0;
+      font-weight: 400;
+      // font-family: "Open Sans", sans-serif;
+    }
+  }
+}

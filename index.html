@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Генератор продаж тестовое задание</title>
 
-    <link rel="stylesheet" href="./src/scss/styles.scss">
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Генератор продаж тестовое задание</title>
+
+  <link rel="stylesheet" href="./src/scss/styles.scss">
+</head>
+
+<body>
 
 
 
+  <div class="wrapper">
+    <button class="button js-open-popup">Кликни</button>
+  </div>
 
+
+
+  <div class="popup js-popup">
+    <button class="popup__close"></button>
     
-    <script type="module" src="./src/index.js"></script>
-  </body>
+    <img src="./src/images/decor-1.png" alt="Получите набор файлов для руководителя" class="popup__decor-1">
+    <img src="./src/images/decor-2.png" alt="Получите набор файлов для руководителя" class="popup__decor-2">
+
+    <h2 class="popup__title">Получите набор файлов для руководителя:</h2>
+
+    <form class="popup__form form">
+        <label class="form__input-wrap">
+          <span>Введите Email для получения файлов:</span>
+          <input type="email" class="form__input" placeholder="E-mail">
+        </label>
+
+        <label class="form__input-wrap">
+          <span>Введите телефон для подтверждения доступа:</span>
+          <input type="tel" class="form__input" placeholder="+7 (000) 000-00-00">
+        </label>
+    </form>
+  </div>
+
+
+
+  <div class="background js-background"></div>
+
+
+
+  <script type="module" src="./src/index.js"></script>
+</body>
+
 </html>

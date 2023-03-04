@@ -1,0 +1,24 @@
+.button {
+  width: 235px;
+  height: 70px;
+  display: block;
+
+  background-color: #ff0000;
+  color: white;
+  font-family: "Source Sans Pro";
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px #960000;
+
+  transition: 300ms;
+
+  margin: auto;
+
+  &:hover {
+    background-color: #e00000;
+  }
+  &:active {
+    box-shadow: 0 0 0 0 #960000;
+  }
+}
