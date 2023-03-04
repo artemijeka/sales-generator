@@ -1,7 +1,7 @@
 {
-  "name": "generator-sales",
+  "name": "sales-generator",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@vitejs/plugin-legacy": "^4.0.1",
     "sass": "^1.58.3",
     "vite": "^4.1.0"
   }

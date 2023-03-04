@@ -8,6 +8,9 @@
   height: 100%;
   opacity: 0;
   pointer-events: none;
+
+  transition: 500ms ease-out;
+
   &.--active {
     opacity: 0.9;
     pointer-events: initial;

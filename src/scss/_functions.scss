@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+@function px2vw($px) {
+  $pxInVw: math.div(100, 1895);
+  @return $px * $pxInVw + vw;
+}

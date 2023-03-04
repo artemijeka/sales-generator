@@ -4,25 +4,38 @@
     display: block;
     &:not(:first-of-type) {
       margin-top: 20px;
+      @media screen and (min-width: 992px) {
+        margin-top: px2vw(28);
+      }
     }
-    span {
-      // font-family: "Open Sans", sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      color: #000000;
-      display: block;
-      margin-bottom: 6px;
+  }
+  &__label {
+    // font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #000000;
+    display: block;
+    margin-bottom: 6px;
+    @media screen and (min-width: 992px) {
+      font-size: px2vw(15);
+      margin-bottom: px2vw(9);
     }
   }
   &__input {
     width: 100%;
     display: block;
     height: 42px;
+    font-size: 16px;
     border-radius: 5px;
     border: 1px solid #a0a0a0;
     padding-left: 13px;
+    @media screen and (min-width: 992px) {
+      height: px2vw(52);
+      padding-left: px2vw(18);
+
+      font-size: px2vw(20);
+    }
     &::placeholder {
-      font-size: 16px;
       color: #a0a0a0;
       font-weight: 400;
       // font-family: "Open Sans", sans-serif;
@@ -46,15 +59,36 @@
 
     margin-top: calc(13px + 4px);
     position: relative;
+    @media screen and (min-width: 992px) {
+      height: px2vw(71);
+      font-size: px2vw(25);
+      margin-top: px2vw(21);
+    }
+
+    &-subtext {
+      display: none;
+      @media screen and (min-width: 992px) {
+        width: px2vw(222);
+        display: flex;
+        justify-content: space-between;
+        font-size: px2vw(12);
+        color: #808080;
+        font-weight: 400;
+
+        margin: px2vw(8) auto 0;
+      }
+    }
 
     &:active {
       border-radius: 11px;
-      span {
+    }
+    &:active & {
+      &-layer {
         top: 0;
       }
     }
 
-    span {
+    &-layer {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -68,6 +102,23 @@
       position: absolute;
       left: 0;
       top: -4px;
+      @media screen and (min-width: 992px) {
+        top: px2vw(-6);
+      }
+    }
+    &-decor {
+      width: 28px;
+      height: 31px;
+      background-image: url("../images/touch.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 13px;
+      @media screen and (min-width: 992px) {
+        width: px2vw(35);
+        height: px2vw(39);
+        margin-left: px2vw(17);
+      }
     }
   }
 }
