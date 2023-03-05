@@ -1,4 +1,7 @@
 import { maskPhone } from "./_maskPhone";
+import { onResizeStartEnd } from "./_onResizeStartEnd";
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   try {
@@ -10,6 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let form = document.querySelector(".js-form");
     let formInputAll = form.querySelectorAll("input");
     // let formSubmit = form.querySelector(".js-form-submit");
+
+    // Чтобы не проскакивала вёрстка попапа и подложки при загрузке
+    [popup, background].forEach((el) => {
+      el.style = "";
+    });
 
     openPopup.addEventListener("click", (e) => {
       popup.classList.add("--active");
@@ -27,6 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
+    onResizeStartEnd(
+      () => {
+        popup.classList.add("--hide");
+      },
+      () => {
+        popup.classList.remove("--hide");
+      },
+      500
+    );
+
     // .form
     maskPhone('input[type="tel"]');
 
@@ -41,8 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       console.log(formData);
 
-      let url =
-        "https://web.master-artem.ru/projects/tests/generator-sales/mail.php";
+      formData.append("from", "CP@()(@YCB@HDFCB)@(tb(RRGCB&^389b");
+
+      let url = "./mail.php";
 
       // popup.classList.add("--error");
 
@@ -56,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((result) => {
           if (result === "sended") {
             popup.classList.add("--sended");
-          } else if (result === "error") {
+          } else {
             popup.classList.add("--error");
           }
         })

@@ -20,7 +20,7 @@
 
 
 
-  <div class="popup js-popup">
+  <div class="popup js-popup" style="display: none;">
 
     <div class="popup__success">Форма отправлена!</div>
     <div class="popup__error">Форма НЕ отправлена! Пожалуйста дайте нам знать об этом.</div>
@@ -37,7 +37,7 @@
     <form class="popup__form form js-form">
       <label class="form__input-wrap">
         <span class="form__label">Введите Email для получения файлов:</span>
-        <input required type="email" class="form__input" placeholder="E-mail">
+        <input type="email" class="form__input" placeholder="E-mail">
       </label>
 
       <label class="form__input-wrap">
@@ -47,18 +47,33 @@
 
       <input type="text" style="display: none;" value="Форма: «Получите набор файлов для руководителя»">
 
-      <button class="form__submit js-form-submit"><span class="form__submit-layer">Скачать файлы<span class="form__submit-decor"></span></span></button>
-      <div class="form__submit-subtext"><span>PDF 4,7 MB</span>&nbsp;<span>DOC 0,8 MB</span>&nbsp;<span>XLS 1,2 MB</span></div>
+      <button class="form__submit js-form-submit"><span class="form__submit-layer">Скачать файлы<span
+            class="form__submit-decor"></span></span></button>
+      <div class="form__submit-subtext"><span>PDF 4,7 MB</span>&nbsp;<span>DOC 0,8 MB</span>&nbsp;<span>XLS 1,2
+          MB</span></div>
     </form>
   </div>
 
 
 
-  <div class="background js-background"></div>
+  <div class="background js-background" style="display: none;"></div>
+
+
+
+  <!-- 
+    data-state="test" -->
+  <script class="amocrm_oauth" charset="utf-8" data-title="Button" data-client-id="f467f7b7-22f0-4305-86f0-31455e5b4eef"
+    data-compact="false" data-class-name="className" data-color="default" data-error-callback="functionName"
+    data-mode="popup" data-redirect_uri='https://web.master-artem.ru/projects/tests/sales-generator/amocrm/index.php'
+    data-secrets_uri='https://web.master-artem.ru/projects/tests/sales-generator/amocrm/secret.php'
+    src="https://www.amocrm.ru/auth/button.min.js"></script>
 
 
 
   <script type="module" src="./src/js/index.js"></script>
+
+  
+
 </body>
 
 </html>

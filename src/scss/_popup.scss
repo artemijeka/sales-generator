@@ -1,11 +1,12 @@
 .popup {
   width: 320px;
   height: auto;
+  overflow-y: auto;
+  max-height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  overflow: hidden;
   border-radius: 15px;
   background-color: #fff;
   padding-top: 15px;
@@ -16,7 +17,7 @@
   opacity: 0;
   pointer-events: none;
 
-  transition: 500ms ease-out;
+  transition: opacity 500ms ease-out;
 
   position: fixed;
   z-index: 100;
@@ -25,6 +26,7 @@
   transform: translate(-50%, -50%);
 
   @media screen and (min-width: 992px) {
+    overflow-y: initial;
     width: px2vw(909);
     align-items: flex-start;
     flex-direction: row;
@@ -35,10 +37,15 @@
     padding: px2vw(54);
     padding-bottom: 0;
   }
-
   &.--active {
     opacity: 1;
     pointer-events: initial;
+  }
+  &.--hide {
+    *:not(.popup__close) {
+      transition: 0;
+      opacity: 0;
+    }
   }
 
   &__close {
@@ -52,7 +59,7 @@
     padding: 6px;
     box-sizing: content-box;
 
-    transition: 300ms;
+    transition: transform 300ms;
 
     position: absolute;
     z-index: 10;
@@ -130,18 +137,20 @@
   }
   &.--sended,
   &.--error {
+    transition: 0ms;
+    overflow-y: hidden;
     height: 200px;
+    @media screen and (min-width: 992px) {
+      width: 29vw;
+      min-height: 19vw;
+
+      padding-bottom: px2vw(54);
+    }
   }
   &__success,
   &__error {
-    pointer-events: none;
-    transition: 300ms ease-out;
-  }
-  &.--sended &__success,
-  &.--error &__error {
-    opacity: 1;
-    pointer-events: initial;
-    display: flex;
+    display: none;
+    text-align: center;
     font-family: "Open Sans", sans-serif;
     text-align: center;
     margin-top: 23px;
@@ -151,13 +160,18 @@
     left: 0;
     width: 100%;
     height: 100%;
+
+    padding: 33px;
     background-color: #fff;
     z-index: 5;
     margin: 0;
     justify-content: center;
     align-items: center;
+  }
+  &.--sended &__success,
+  &.--error &__error {
+    display: flex;
     @media screen and (min-width: 992px) {
-      width: 24vw;
       text-align: left;
       font-size: px2vw(35);
       margin-top: 0;
