@@ -3,8 +3,8 @@
 if ($_POST['from'] === 'CP@()(@YCB@HDFCB)@(tb(RRGCB&^389b') {
 
   $message = "<p>";
-  $message .= "Email: " . $_POST[0];
-  $message .= "<br>Телефон: " . $_POST[1];
+  $message .= "Email: " . $_POST['email'];
+  $message .= "<br>Телефон: " . $_POST['phone'];
   $message .= "</p>";
 
   $headers  = "From: web@master-artem.ru" . "\r\n";
@@ -13,9 +13,9 @@ if ($_POST['from'] === 'CP@()(@YCB@HDFCB)@(tb(RRGCB&^389b') {
   $headers .= "MIME-Version: 1.0\r\n";
   $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-  $subject = $_POST[2];
+  $subject = $_POST['subject'];
 
-  if (@mail("artem.kuznecov.samara@yandex.ru", $subject, $message, $headers)) {
+  if (@mail($_POST['to'], $subject, $message, $headers)) {
     echo 'sended';
   } else {
     echo 'error';

@@ -54,8 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let formData = new FormData();
       // let formData = [];
       formInputAll.forEach((el, i) => {
-        formData.append(i, el.value);
-        // formData[i] = el.value;
+        formData.append(el.dataset.what, el.value);
       });
       console.log(formData);
 

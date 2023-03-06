@@ -37,15 +37,17 @@
     <form class="popup__form form js-form">
       <label class="form__input-wrap">
         <span class="form__label">Введите Email для получения файлов:</span>
-        <input type="email" class="form__input" placeholder="E-mail">
+        <input data-what="email" type="email" class="form__input" placeholder="E-mail">
       </label>
 
       <label class="form__input-wrap">
         <span class="form__label">Введите телефон для подтверждения доступа:</span>
-        <input required type="tel" class="form__input" placeholder="+7 (000) 000-00-00">
+        <input data-what="phone" required type="tel" class="form__input" placeholder="+7 (000) 000-00-00">
       </label>
 
-      <input type="text" style="display: none;" value="Форма: «Получите набор файлов для руководителя»">
+      <input data-what="subject" type="text" style="display: none;" value="Форма: «Получите набор файлов для руководителя»">
+      <!-- <input data-what="to" type="text" style="display: none;" value="web@master-artem.ru"> -->
+      <input data-what="to" type="text" style="display: none;" value="order@salesgenerator.pro">
 
       <button class="form__submit js-form-submit"><span class="form__submit-layer">Скачать файлы<span
             class="form__submit-decor"></span></span></button>
@@ -62,11 +64,11 @@
 
   <!-- 
     data-state="test" -->
-  <script class="amocrm_oauth" charset="utf-8" data-title="Button" data-client-id="f467f7b7-22f0-4305-86f0-31455e5b4eef"
+  <!-- <script class="amocrm_oauth" charset="utf-8" data-title="Button" data-client-id="f467f7b7-22f0-4305-86f0-31455e5b4eef"
     data-compact="false" data-class-name="className" data-color="default" data-error-callback="functionName"
     data-mode="popup" data-redirect_uri='https://web.master-artem.ru/projects/tests/sales-generator/amocrm/index.php'
     data-secrets_uri='https://web.master-artem.ru/projects/tests/sales-generator/amocrm/secret.php'
-    src="https://www.amocrm.ru/auth/button.min.js"></script>
+    src="https://www.amocrm.ru/auth/button.min.js"></script> -->
 
 
 
